@@ -1,0 +1,13 @@
+[
+    {
+      "numero": "102439",
+      "email": "cliente1@email.com",
+      "status": "aberto"
+    },
+    {
+      "numero": "102440",
+      "email": "cliente2@email.com",
+      "status": "fechado"
+    }
+  ]
+  

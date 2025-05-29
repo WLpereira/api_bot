@@ -22,7 +22,8 @@ async function enviarMensagemChatwoot(inboxId, sourceId, mensagem) {
   }
 
   try {
-    const chatwootApiUrl = `${CHATWOOT_API_BASE_URL}/client/api/v1/inboxes/${inboxId}/messages`;
+    const accountId = 1; // Seu ID da conta do Chatwoot
+    const chatwootApiUrl = `${CHATWOOT_API_BASE_URL}/client/api/v1/accounts/${accountId}/inboxes/${inboxId}/messages`;
     const messagePayload = {
       source_id: sourceId,
       message_type: 'outgoing',

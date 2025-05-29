@@ -23,7 +23,7 @@ async function enviarMensagemChatwoot(inboxId, sourceId, mensagem) {
 
   try {
     const accountId = 1; // Seu ID da conta do Chatwoot
-    const chatwootApiUrl = `${CHATWOOT_API_BASE_URL}/client/api/v1/accounts/${accountId}/inboxes/${inboxId}/messages`;
+    const chatwootApiUrl = `${CHATWOOT_API_BASE_URL}/api/v1/accounts/${accountId}/inboxes/${inboxId}/messages`;
     const messagePayload = {
       source_id: sourceId,
       message_type: 'outgoing',
@@ -37,7 +37,7 @@ async function enviarMensagemChatwoot(inboxId, sourceId, mensagem) {
 
     await axios.post(chatwootApiUrl, messagePayload, { headers });
   } catch (error) {
-    console.error('Erro ao enviar mensagem para o Chatwoot:', error);
+    console.error('Erro ao enviar mensagem para o Chatwoot:', error.response ? error.response.data : error.message);
   }
 }
 
